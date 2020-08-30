@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorRapport"
+    android:orientation="vertical"
+    tools:context=".AddActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Register New Patient"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginTop="32dp"/>
+
+    <EditText
+        android:id="@+id/add_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="8dp"
+        android:hint="Name"/>
+
+    <EditText
+        android:id="@+id/add_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:inputType="number"
+        android:padding="8dp"
+        android:hint="Age" />
+
+    <EditText
+        android:id="@+id/add_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:inputType="textPersonName"
+        android:hint="Gender" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center_horizontal"
+        android:onClick="addData"
+        app:srcCompat="@drawable/ic_add_circle_black_24dp" />
+
+
+</LinearLayout>
