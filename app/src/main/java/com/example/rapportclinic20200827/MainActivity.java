@@ -4,20 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ActionBar;
-import android.app.Dialog;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.widget.TextView;
 
 import com.example.rapportclinic20200827.Adaper.CustomAdapter;
+import com.mancj.materialsearchbar.MaterialSearchBar;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private MyDataBaseHelper myDb;
     private ArrayList<String> idList,nameList,ageList,genderList,dateList;
     private CustomAdapter customAdapter;
+    private MaterialSearchBar materialSearchBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mainRecyclerView = findViewById(R.id.main_recycler_view);
+        materialSearchBar = findViewById(R.id.main_searchBar);
 
         myDb = new MyDataBaseHelper(this);
 
@@ -63,10 +61,28 @@ public class MainActivity extends AppCompatActivity {
         mainRecyclerView.setLayoutManager(linearLayoutManager);
         mainRecyclerView.setAdapter(customAdapter);
 
+
+        materialSearchBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToSearchActivity();
+            }
+        });
+
     }
 
     public void goToAddActivity(View view){
         Intent intent = new Intent(MainActivity.this,AddActivity.class);
         startActivity(intent);
+    }
+
+
+    private void goToSearchActivity(){
+        Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
+                materialSearchBar,"searchBar");
+
+        startActivity(intent, options.toBundle());
     }
 }

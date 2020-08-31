@@ -4,24 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
 
     <com.mancj.materialsearchbar.MaterialSearchBar
-        android:id="@+id/searchBar"
+        android:id="@+id/main_searchBar"
         style="@style/MaterialSearchBarLight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="32dp"
+        android:elevation="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:mt_hint="Search"
         app:mt_hintColor="@color/colorRapport"
         app:mt_maxSuggestionsCount="10"
+        app:mt_placeholder="search"
         app:mt_speechMode="false"
+        android:background="#BEB8B8"
+        android:transitionName="searchBar"
+        android:focusable="false"
         app:mt_textColor="@color/colorRapport" />
 
     <TextView
@@ -42,7 +48,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginBottom="44dp"
         android:background="@drawable/clinic_profile_border"
-        app:layout_constraintBottom_toTopOf="@+id/searchBar"
+        app:layout_constraintBottom_toTopOf="@+id/main_searchBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent">
@@ -58,7 +64,7 @@
         android:text="sorted by : name"
         android:textColor="@color/colorRapport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchBar" />
+        app:layout_constraintTop_toBottomOf="@+id/main_searchBar" />
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -66,8 +72,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
