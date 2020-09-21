@@ -13,9 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Register New Patient"
-        android:textColor="@color/white"
+        android:textColor="#F8F8F8"
         android:textSize="18sp"
-        android:layout_marginTop="32dp"/>
+        android:layout_marginTop="32dp"
+        android:elevation="6dp"/>
 
     <EditText
         android:id="@+id/add_name"
@@ -27,6 +28,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:padding="8dp"
+        android:background="@drawable/clinic_edit_text_border"
+        android:elevation="6dp"
         android:hint="Name"/>
 
     <EditText
@@ -39,6 +42,8 @@
         android:layout_marginRight="32dp"
         android:inputType="number"
         android:padding="8dp"
+        android:elevation="6dp"
+        android:background="@drawable/clinic_edit_text_border"
         android:hint="Age" />
 
     <EditText
@@ -50,16 +55,51 @@
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:inputType="textPersonName"
+        android:padding="8dp"
+        android:elevation="6dp"
+        android:background="@drawable/clinic_edit_text_border"
         android:hint="Gender" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="save"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:onClick="addData"
+            android:background="@android:color/transparent"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="32dp"
+        android:background="@color/white"/>
+
+
+
+    <TextView
+
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:layout_gravity="center_horizontal"
-        android:onClick="addData"
-        app:srcCompat="@drawable/ic_add_circle_black_24dp" />
-
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:padding="8dp"
+        android:elevation="6dp"
+        android:background="@drawable/clinic_edit_text_border"
+        android:text="Add a new visit"
+        android:drawableRight="@drawable/right_arraw_small"
+        android:onClick="addNewVisitor"
+        android:textColor="@color/colorRapport"/>
 
 </LinearLayout>

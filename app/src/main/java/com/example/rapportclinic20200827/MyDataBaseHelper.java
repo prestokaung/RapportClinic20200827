@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -74,6 +75,25 @@ public class MyDataBaseHelper extends SQLiteOpenHelper {
         if(db != null){
             cursor = db.rawQuery(query,null);
         }
+        return cursor;
+    }
+
+
+    //get data by name
+    public Cursor getDataByName(String name){
+        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+
+        String[] sqlSelect={COLUMN_ID,
+                COLUMN_NAME,
+                COLUMN_AGE,
+                COLUMN_GENDER,
+                COLUMN_DATE};
+
+        qb.setTables(TABLE_NAME);
+        Cursor cursor = qb.query(db, sqlSelect, COLUMN_NAME + " LIKE ?",
+                new String[]{"%"+name+"%"}, null, null, null);
+
         return cursor;
     }
 

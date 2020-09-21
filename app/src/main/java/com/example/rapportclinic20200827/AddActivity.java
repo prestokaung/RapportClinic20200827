@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -18,6 +19,7 @@ public class AddActivity extends AppCompatActivity {
 
     private EditText name,age,gender;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +28,8 @@ public class AddActivity extends AppCompatActivity {
         name = findViewById(R.id.add_name);
         age = findViewById(R.id.add_age);
         gender = findViewById(R.id.add_gender);
+
+
     }
 
     public void addData(View view){
@@ -59,6 +63,11 @@ public class AddActivity extends AppCompatActivity {
             startActivity(intent);
 
         }
+    }
+
+    public void addNewVisitor(View view){
+        Intent intent = new Intent(AddActivity.this,Form2.class);
+        startActivity(intent);
     }
 
 }

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFEFEF"
+    tools:context=".Form2">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="90dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:fitsSystemWindows="true"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="34dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginRight="34dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Visit #1"
+                    android:textColor="@color/colorBlack" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="2020-8-20"
+                    android:textColor="@color/colorBlack" />
+            </RelativeLayout>
+
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="34dp"
+                android:layout_marginEnd="34dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Cough" />
+
+
+            <TextView
+                android:id="@+id/form2_history_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="34dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="34dp"
+                android:background="@color/colorWhite"
+                android:padding="8dp"
+                android:text="History\n_______"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/form2_history_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="34dp"
+                android:layout_marginEnd="34dp"
+                android:background="@color/colorWhite"
+                android:padding="8dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/form2_examination_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="34dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="34dp"
+                android:background="@color/colorWhite"
+                android:padding="8dp"
+                android:text="Examination\n___________"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/form2_examination_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="34dp"
+                android:layout_marginEnd="34dp"
+                android:background="@color/colorWhite"
+                android:padding="8dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_sheet_shield"
+        android:orientation="vertical"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        app:layout_insetEdge="bottom"
+        app:behavior_peekHeight="80dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="---"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="top|center_horizontal"
+            android:textColor="@color/colorBlack"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/form2_history_choice"
+                android:layout_width="112dp"
+                android:layout_height="28dp"
+                android:text="History"
+                android:gravity="center"
+                android:background="@drawable/text_border"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/form2_examination_choice"
+                android:layout_width="112dp"
+                android:layout_height="28dp"
+                android:text="Examination"
+                android:gravity="center"
+                android:background="@drawable/text_border"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/colorBlack"/>
+
+            <ImageButton
+                android:id="@+id/form2_send"
+                android:layout_width="112dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:layout_weight="1"
+                android:background="@drawable/text_border"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_send_black_24dp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/form2_description_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/text_border"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
+            android:padding="8dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:layout_marginBottom="40dp" />
+
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

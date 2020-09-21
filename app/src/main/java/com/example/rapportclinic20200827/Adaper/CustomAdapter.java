@@ -1,6 +1,7 @@
 package com.example.rapportclinic20200827.Adaper;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.rapportclinic20200827.ProfileActivity;
 import com.example.rapportclinic20200827.R;
 
 import java.util.ArrayList;
@@ -37,10 +39,21 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
         holder.name.setText(String.valueOf(nameList.get(position)));
         holder.date.setText(String.valueOf(dateList.get(position)));
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ProfileActivity.class);
+                intent.putExtra("name",nameList.get(position));
+                intent.putExtra("age",ageList.get(position));
+                intent.putExtra("gender",genderList.get(position));
+                context.startActivity(intent);
+            }
+        });
 
     }
 
@@ -60,4 +73,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             date = itemView.findViewById(R.id.all_patient_date);
         }
     }
+
+
 }
